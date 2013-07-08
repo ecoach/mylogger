@@ -13,7 +13,7 @@ urlpatterns = patterns('',
 
     # services
     #url(r'^json_log/', login_required(Json_View), name='json_log'),
-    url(r'^', login_required(Use_View), name='data_log'),
+    url(r'^', login_required(what_log_view), name='what_log'),
 )
 
 

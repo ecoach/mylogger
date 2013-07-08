@@ -1,9 +1,11 @@
+from django.http import HttpResponse, HttpResponseRedirect
+from .models import *
+
 # Create your views here.
-def Use_View(request):
+def what_log_view(request):
     import datetime
-    # do a little logging...
     try:
-        rwhat = request.GET['what'] 
+        rwhat = request.GET['logEvent'] 
     except:
         rwhat = 'null'
     rwho = request.user.username
@@ -14,20 +16,8 @@ def Use_View(request):
 
     return HttpResponse("Event record made.")
  
-def Log_Survey(request, survey_id):
-    import datetime
-    # do a little logging...
-    # rwhat = request.GET['what'] 
-    rwhat = survey_id 
-    rwho = request.user.username
-    rwhen = datetime.datetime.now()
-
-    log = Survey_Log(who=request.user, mwhen=rwhen, survey=rwhat)
-    log.save()
-
 def Log_Request(request):
     import datetime
-    # do a little logging...
     rwhat = request.path
     rwho = request.user.username
     rwhen = datetime.datetime.now()
