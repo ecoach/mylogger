@@ -16,13 +16,4 @@ def what_log_view(request):
 
     return HttpResponse("Event record made.")
  
-def Log_Request(request):
-    import datetime
-    rwhat = request.path
-    rwho = request.user.username
-    rwhen = datetime.datetime.now()
-
-    log = ELog(who=request.user, mwhen=rwhen, what=rwhat)
-    log.save()       
-
 
