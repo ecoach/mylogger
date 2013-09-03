@@ -4,14 +4,11 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-// TODO: cookie domain should be false and a different UA code should be used when deployed to production. 
-//  is there an easy way in django to expose to a view which environment the application is deployed to?
-ga('create', 'UA-37331371-3', 'umich.edu');
-//ga('create', 'UA-37331371-3');
-//ga('create', 'UA-37331371-3', {
-//    'cookieDomain': 'none' 
-//});
 
+if(CONF.production()) 
+    ga('create', 'UA-37331371-4', 'umich.edu');
+else
+    ga('create', 'UA-37331371-3', 'umich.edu');
 
 // handles pushing log events both to our internal logging api and google analytics
 logger = {
