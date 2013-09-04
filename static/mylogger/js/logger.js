@@ -4,11 +4,12 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-
-if(CONF.production()) 
-    ga('create', 'UA-37331371-4', 'umich.edu');
-else
-    ga('create', 'UA-37331371-3', 'umich.edu');
+jQuery(document).ready(function($){
+    if(CONF.production()) 
+        ga('create', 'UA-37331371-4', 'umich.edu');
+    else
+        ga('create', 'UA-37331371-3', 'umich.edu');
+});
 
 // handles pushing log events both to our internal logging api and google analytics
 logger = {
