@@ -12,7 +12,21 @@ jQuery(document).ready(function($){
 });
 
 // handles pushing log events both to our internal logging api and google analytics
-logger = {
+var logger = {
+    page_dynamics: function(cat, action) {
+        // log event
+        var logCategory = cat;
+        var logAction = action;
+        var elog = {}
+        elog.eventCategory = logCategory;
+        elog.eventAction = logAction;
+        //jlog = {};
+        //jlog.exams = exams;
+        //jlog.hw = hw;
+        //jlog.quiz = quiz;
+        logger.logEvent(false, elog); 
+        //logger.logEvent(false, elog, JSON.stringify(jlog)); 
+    },
     logEvent: function(pageview, elog, json) {
         elog = elog || {}
         // configure data
