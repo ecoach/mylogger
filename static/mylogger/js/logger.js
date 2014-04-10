@@ -20,12 +20,7 @@ var logger = {
         var elog = {}
         elog.eventCategory = logCategory;
         elog.eventAction = logAction;
-        //jlog = {};
-        //jlog.exams = exams;
-        //jlog.hw = hw;
-        //jlog.quiz = quiz;
         logger.logEvent(false, elog); 
-        //logger.logEvent(false, elog, JSON.stringify(jlog)); 
     },
     logEvent: function(pageview, elog, json) {
         elog = elog || {}
