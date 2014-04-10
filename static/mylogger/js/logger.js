@@ -42,7 +42,7 @@ var logger = {
                 action: elog.eventAction || 'null',
                 label: elog.eventLabel || 'null',
                 value: elog.eventValue || 0,
-                json: json || '{}'
+                json: JSON.stringify(json) || '{}'
             }
         });
         //NOTE: per GA terms of service username cannot be sent to GA 
